@@ -1,0 +1,7 @@
+{
+  "name": "churchdonation",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
