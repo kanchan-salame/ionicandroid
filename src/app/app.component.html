@@ -1,3 +1,42 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content" class="edupala-menu">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+      </ion-header>
+      <ion-content class="ion-no-padding">
+        <ion-menu-toggle auto-hide="false" color>
+          <ion-toolbar>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <img src="image-link" />
+                </ion-col>
+                <ion-col size="8">
+                  <ion-text menuClose>
+                    Mr. Smith
+                  </ion-text>
+                  <div class="headerLogoutBtn">
+                    <ion-button fill="clear" (click)="logout()">
+                      Logout <ion-icon slot="icon-only" name="log-out"></ion-icon>
+                    </ion-button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+
+          <ion-list class="ion-no-padding ion-no-margin">
+            <span *ngFor="let p of appPages; let i = index">
+              <ion-item color="primary" menuClose routerDirection="root" [routerLink]="[p.url]" routerLinkActive="selected">
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </span>
+          </ion-list>
+        </ion-menu-toggle>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

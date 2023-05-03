@@ -27,6 +27,30 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'contacts',
+    loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
 ];
 
 @NgModule({
