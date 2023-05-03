@@ -68,9 +68,7 @@ export class LoginPage implements OnInit {
 		if (user) {
 			this.router.navigateByUrl('/home', { replaceUrl: true });
 		} else {
-      // this.showAlert('Registration failed', 'Please try again!');
-      alert('hi')
-
+      this.showAlert('Registration failed', 'Please try again!');
 		}
 	}
 
@@ -85,11 +83,8 @@ export class LoginPage implements OnInit {
 
 		if (user) {
 			this.router.navigateByUrl('/home', { replaceUrl: true });
-      // this.navCtrl.navigateRoot('home');
 		} else {
-			// console.log('something went wrong');
-      // this.showAlert('Login failed', 'Please try again!');
-      alert('hi')
+      this.showAlert('Login failed', 'Please try again!');
 		}
 	}
 
@@ -97,36 +92,13 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/signup']);
   }
 
-  // async SignUp(this.email, this.password) {
-  //     	try {
-  //     		const user = await signInWithEmailAndPassword(this.auth, this.email, this.password);
-  //     		return user;
-  //     	} catch (e) {
-  //     		return null;
-  //     	}
-  // }
-
-  // SignIn() {
-  //     	try {
-  //     		const user = signInWithEmailAndPassword(this.auth, this.email, this.password);
-  //         console.log(user)
-  //         this.storage.set('user', this.auth);
-
-  //         // this.router.navigate(['/home']);
-  //         this.navCtrl.navigateRoot('home');
-  //         // return user;
-  //     	} catch (e) {
-  //     		// return null;
-  //     	}
-  //   }
-
   async showAlert(header , message) {
-		// const alert = await this.alertController.create({
-		// 	header,
-		// 	message,
-		// 	buttons: ['OK']
-		// });
-		// await alert.present();
+		const alert = await this.alertController.create({
+			header,
+			message,
+			buttons: ['OK']
+		});
+		await alert.present();
 	}
 
 }
